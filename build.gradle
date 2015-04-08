@@ -1,0 +1,62 @@
+//Example gradle wrapper 2.4.x build
+buildscript {
+  repositories {
+    mavenCentral()
+    jcenter()
+    maven {
+      credentials {
+        username mavenUsername
+        password mavenPassword
+      }
+      url mavenUrl
+    }
+  }
+  dependencies {
+    classpath 'com.spindrift.atg:start-sql-import:0.2.0'
+    classpath "com.spindrift.tools.gradle.plugins:DatabasePlugin:1.5.6"
+  }
+}
+
+project.ext {
+  userHome=System.getProperty('user.home')
+  buildToolsDir='buildtools'
+  gradleToolsDir="${buildToolsDir}/gradle"
+  buildEnv = (project.hasProperty('env')) ? env : 'dev'
+}
+
+//Apply default language plugins to all projects
+allprojects {
+  apply plugin: 'groovy'
+  apply plugin: 'eclipse'
+  
+  // Set encoding for compile tasks to UTF-8
+  project.tasks.withType(GroovyCompile) {
+    groovyOptions.encoding = "UTF-8"
+  }
+  project.tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+  }
+}
+
+//Apply custom plugins
+apply plugin: 'DatabasePlugin'
+apply plugin: 'start-sql-import'
+
+/**
+ * Apply custom plugin configuration
+ * 1. project level (required)
+ * 2. environment level (optional)
+ * 3. user level (optional)
+ */
+apply from: "${gradleToolsDir}/plugin-config-project.gradle"
+apply from: "${gradleToolsDir}/plugin-config-env.gradle"
+apply from: "${gradleToolsDir}/plugin-config-user.gradle"
+
+//Set the defaul task to execute when none supplied
+defaultTasks 'build'
+
+// Add the wrapper task to enable auto-install of the configured version via ./gradlew
+task wrapper(type: Wrapper) {
+  gradleVersion = "2.4-20150406220025+0000"
+}
+

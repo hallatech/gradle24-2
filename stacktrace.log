@@ -1,0 +1,110 @@
+hallatech@Hallatechs-MacBook-Pro~/Documents/workspace-spindrift/gradle24$ g clean build -i -S
+Connected to daemon DaemonInfo{pid=67939, address=[484ca6e0-eb9f-4fc2-a952-059bd31db60b port:56426, addresses:[/0:0:0:0:0:0:0:1, /127.94.0.2, /127.94.0.1, /127.0.0.1]], idle=true, context=DefaultDaemonContext[uid=83c1f3a4-908f-4d0c-a999-a2402d5bfc49,javaHome=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home,daemonRegistryDir=/Users/hallatech/.gradle/daemon,pid=67939,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]}. Dispatching request Build{id=10e585a7-17a4-44b6-8393-22659ef1971f.1, currentDir=/Users/hallatech/Documents/workspace-spindrift/gradle24}.
+The client will now receive all logging from the daemon (pid: 67939). The daemon log file: /Users/hallatech/.gradle/daemon/2.4-20150406220025+0000/daemon-67939.out.log
+Starting 35th build in daemon [uptime: 47 mins 16.085 secs, performance: 96%, memory: 54% of 954.7 MB]
+Executing build with daemon context: DefaultDaemonContext[uid=83c1f3a4-908f-4d0c-a999-a2402d5bfc49,javaHome=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home,daemonRegistryDir=/Users/hallatech/.gradle/daemon,pid=67939,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]
+Starting Build
+Settings evaluated using settings file '/master/settings.gradle'.
+Projects loaded. Root project using build file '/Users/hallatech/Documents/workspace-spindrift/gradle24/build.gradle'.
+Included projects: [root project 'gradle24']
+Evaluating root project 'gradle24' using build file '/Users/hallatech/Documents/workspace-spindrift/gradle24/build.gradle'.
+applying user override: /Users/hallatech/Documents/workspace-spindrift/gradle24/usersettings.gradle
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Script '/Users/hallatech/Documents/workspace-spindrift/gradle24/buildtools/gradle/plugin-config-user.gradle' line: 13
+
+* What went wrong:
+A problem occurred evaluating script.
+> Cannot add deferred configuration for project :
+
+* Try:
+Run with --debug option to get more log output.
+
+* Exception is:
+org.gradle.api.GradleScriptException: A problem occurred evaluating script.
+  at org.gradle.groovy.scripts.internal.DefaultScriptRunnerFactory$ScriptRunnerImpl.run(DefaultScriptRunnerFactory.java:76)
+  at org.gradle.configuration.DefaultScriptPluginFactory$ScriptPluginImpl$1.run(DefaultScriptPluginFactory.java:148)
+  at org.gradle.configuration.DefaultScriptPluginFactory$ScriptPluginImpl.apply(DefaultScriptPluginFactory.java:156)
+  at org.gradle.api.internal.plugins.DefaultObjectConfigurationAction.applyScript(DefaultObjectConfigurationAction.java:102)
+  at org.gradle.api.internal.plugins.DefaultObjectConfigurationAction.access$000(DefaultObjectConfigurationAction.java:36)
+  at org.gradle.api.internal.plugins.DefaultObjectConfigurationAction$1.run(DefaultObjectConfigurationAction.java:62)
+  at org.gradle.api.internal.plugins.DefaultObjectConfigurationAction.execute(DefaultObjectConfigurationAction.java:136)
+  at org.gradle.api.internal.project.AbstractPluginAware.apply(AbstractPluginAware.java:46)
+  at org.gradle.api.plugins.PluginAware$apply.call(Unknown Source)
+  at org.gradle.api.internal.project.ProjectScript.apply(ProjectScript.groovy:34)
+  at org.gradle.api.Script$apply$0.callCurrent(Unknown Source)
+  at build_cpxb0vfi8czawsq78z8ghj57.run(/Users/hallatech/Documents/workspace-spindrift/gradle24/build.gradle:53)
+  at org.gradle.groovy.scripts.internal.DefaultScriptRunnerFactory$ScriptRunnerImpl.run(DefaultScriptRunnerFactory.java:74)
+  at org.gradle.configuration.DefaultScriptPluginFactory$ScriptPluginImpl$1.run(DefaultScriptPluginFactory.java:148)
+  at org.gradle.configuration.DefaultScriptPluginFactory$ScriptPluginImpl.apply(DefaultScriptPluginFactory.java:156)
+  at org.gradle.configuration.project.BuildScriptProcessor.execute(BuildScriptProcessor.java:39)
+  at org.gradle.configuration.project.BuildScriptProcessor.execute(BuildScriptProcessor.java:26)
+  at org.gradle.configuration.project.ConfigureActionsProjectEvaluator.evaluate(ConfigureActionsProjectEvaluator.java:34)
+  at org.gradle.configuration.project.LifecycleProjectEvaluator.evaluate(LifecycleProjectEvaluator.java:55)
+  at org.gradle.api.internal.project.AbstractProject.evaluate(AbstractProject.java:483)
+  at org.gradle.api.internal.project.AbstractProject.evaluate(AbstractProject.java:86)
+  at org.gradle.execution.TaskPathProjectEvaluator.configureHierarchy(TaskPathProjectEvaluator.java:42)
+  at org.gradle.configuration.DefaultBuildConfigurer.configure(DefaultBuildConfigurer.java:35)
+  at org.gradle.initialization.DefaultGradleLauncher.doBuildStages(DefaultGradleLauncher.java:129)
+  at org.gradle.initialization.DefaultGradleLauncher.doBuild(DefaultGradleLauncher.java:106)
+  at org.gradle.initialization.DefaultGradleLauncher.run(DefaultGradleLauncher.java:86)
+  at org.gradle.launcher.exec.InProcessBuildActionExecuter$DefaultBuildController.run(InProcessBuildActionExecuter.java:90)
+  at org.gradle.tooling.internal.provider.ExecuteBuildActionRunner.run(ExecuteBuildActionRunner.java:28)
+  at org.gradle.launcher.exec.ChainingBuildActionRunner.run(ChainingBuildActionRunner.java:35)
+  at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:41)
+  at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:28)
+  at org.gradle.launcher.daemon.server.exec.ExecuteBuild.doBuild(ExecuteBuild.java:49)
+  at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:36)
+  at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
+  at org.gradle.launcher.daemon.server.exec.WatchForDisconnection.execute(WatchForDisconnection.java:37)
+  at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
+  at org.gradle.launcher.daemon.server.exec.ResetDeprecationLogger.execute(ResetDeprecationLogger.java:26)
+  at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
+  at org.gradle.launcher.daemon.server.exec.RequestStopIfSingleUsedDaemon.execute(RequestStopIfSingleUsedDaemon.java:34)
+  at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
+  at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.call(ForwardClientInput.java:74)
+  at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.call(ForwardClientInput.java:72)
+  at org.gradle.util.Swapper.swap(Swapper.java:38)
+  at org.gradle.launcher.daemon.server.exec.ForwardClientInput.execute(ForwardClientInput.java:72)
+  at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
+  at org.gradle.launcher.daemon.server.health.DaemonHealthTracker.execute(DaemonHealthTracker.java:47)
+  at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
+  at org.gradle.launcher.daemon.server.exec.LogToClient.doBuild(LogToClient.java:66)
+  at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:36)
+  at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
+  at org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishBuildEnvironment.java:71)
+  at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:36)
+  at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
+  at org.gradle.launcher.daemon.server.health.HintGCAfterBuild.execute(HintGCAfterBuild.java:41)
+  at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
+  at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:50)
+  at org.gradle.launcher.daemon.server.DaemonStateCoordinator$1.run(DaemonStateCoordinator.java:246)
+  at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+  at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+  at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+  at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+  at java.lang.Thread.run(Thread.java:744)
+Caused by: java.lang.IllegalStateException: Cannot add deferred configuration for project :
+  at org.gradle.api.internal.project.DeferredProjectConfiguration.add(DeferredProjectConfiguration.java:38)
+  at org.gradle.api.internal.project.AbstractProject.addDeferredConfiguration(AbstractProject.java:977)
+  at org.gradle.configuration.DefaultScriptPluginFactory$ScriptPluginImpl.apply(DefaultScriptPluginFactory.java:154)
+  at org.gradle.api.internal.plugins.DefaultObjectConfigurationAction.applyScript(DefaultObjectConfigurationAction.java:102)
+  at org.gradle.api.internal.plugins.DefaultObjectConfigurationAction.access$000(DefaultObjectConfigurationAction.java:36)
+  at org.gradle.api.internal.plugins.DefaultObjectConfigurationAction$1.run(DefaultObjectConfigurationAction.java:62)
+  at org.gradle.api.internal.plugins.DefaultObjectConfigurationAction.execute(DefaultObjectConfigurationAction.java:136)
+  at org.gradle.groovy.scripts.DefaultScript.apply(DefaultScript.java:104)
+  at org.gradle.api.Script$apply$0.callCurrent(Unknown Source)
+  at plugin_config_user_4tzj18llh4kzol39dqacbibze.run(/Users/hallatech/Documents/workspace-spindrift/gradle24/buildtools/gradle/plugin-config-user.gradle:13)
+  at org.gradle.groovy.scripts.internal.DefaultScriptRunnerFactory$ScriptRunnerImpl.run(DefaultScriptRunnerFactory.java:74)
+  ... 61 more
+
+
+BUILD FAILED
+
+Total time: 0.985 secs
+Stopped 0 compiler daemon(s).
+Received result CommandFailure[value=org.gradle.launcher.exec.ReportedException: org.gradle.internal.exceptions.LocationAwareException: Script '/Users/hallatech/Documents/workspace-spindrift/gradle24/buildtools/gradle/plugin-config-user.gradle' line: 13
+A problem occurred evaluating script.] from daemon DaemonInfo{pid=67939, address=[484ca6e0-eb9f-4fc2-a952-059bd31db60b port:56426, addresses:[/0:0:0:0:0:0:0:1, /127.94.0.2, /127.94.0.1, /127.0.0.1]], idle=true, context=DefaultDaemonContext[uid=83c1f3a4-908f-4d0c-a999-a2402d5bfc49,javaHome=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home,daemonRegistryDir=/Users/hallatech/.gradle/daemon,pid=67939,idleTimeout=10800000,daemonOpts=-XX:MaxPermSize=256m,-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country=US,-Duser.language=en,-Duser.variant]}.
+hallatech@Hallatechs-MacBook-Pro~/Documents/workspace-spindrift/gradle24$ 

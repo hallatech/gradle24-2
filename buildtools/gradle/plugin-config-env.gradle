@@ -1,0 +1,20 @@
+/**
+ * Applies configuration overrides per environment.
+ * By default there is no environment override and all configuration is development specific.
+ * The mechanism to override is to add a Gradle parameter CLI option (-P)
+ * Example: Configuration overrides for Continuous Integration (CI)
+ *   gradle <task list ...> -Penv=ci
+ * The parameter value will be found as <env>.gradle in the env sub directory and applied.
+ * If a parameter has been specified and its not 'dev' and there is no file, the job will fail.
+ * Multiple environment files can be chained to reduce repeating configuration:
+ *   gradle <task list ...> -Penv=ci,dev1,dev2
+ */
+if (buildEnv) {
+  def envs = buildEnv.toString().tokenize(',')
+  envs.each { env ->
+    File envFile = new File("${gradleToolsDir}/env/${env}.gradle")
+    if (envFile.exists() || !buildEnv.equals('dev')) {
+      apply from: "${envFile}"
+    }
+  }
+}

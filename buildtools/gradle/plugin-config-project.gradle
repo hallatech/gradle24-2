@@ -1,0 +1,17 @@
+/**
+ * Configures the plugins applied to the root project
+ */
+
+dbconfig {
+   
+}
+
+startSQLImport {
+  imports {
+    parameters {
+      file = 'somefile-versioned.xml'
+      workspace = 'versioned_attributes_'+System.currentTimeMillis()
+    }
+  }
+}
+ 

@@ -1,0 +1,15 @@
+/**
+ * User level plugin configuration overrides
+ * Apply each usersettings file found from:
+ *   1. $USER_HOME/usersettings.gradle (applies to all projects)
+ *   2. $PROJECT_HOME/usersettings.gradle (applies to current project only)
+ * Each file will be applied and can override settings applied by a previous file
+ */
+
+for (file in ["${userHome}/usersettings.gradle","${projectDir}/usersettings.gradle"]) {
+  def userSettings = new File(file)
+  if (userSettings.exists()) {
+    println "applying user override: ${userSettings}"
+    apply from: userSettings
+  }
+}
